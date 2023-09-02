@@ -13,19 +13,13 @@ import static com.ritrageproduction.doorbell.util.Constants.*;
 public class CallService {
 
 	public void callResident() {
-		Twilio.init(ACCOUNT_SID, AUTH_TOKEN);
+		Twilio.init(System.getenv(ACCOUNT_SID), System.getenv(AUTH_TOKEN));
         Call call = Call.creator(
-                new PhoneNumber(toPhone),
-                new PhoneNumber(fromPhone),
+                new PhoneNumber(System.getenv(toPhone)),
+                new PhoneNumber(System.getenv(fromPhone)),
                 URI.create("http://demo.twilio.com/docs/voice.xml"))
             .create();
-//		Call call1 = Call.creator(
-//						new PhoneNumber(toPhone1),
-//						new PhoneNumber(fromPhone),
-//						URI.create("http://demo.twilio.com/docs/voice.xml"))
-//				.create();
         System.out.println(call.getSid());
-//		System.out.println(call1.getSid());
 	}
 
 }
