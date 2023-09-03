@@ -10,7 +10,7 @@
 	</parent>
 	<groupId>com.ritrageproduction</groupId>
 	<artifactId>doorbell</artifactId>
-	<version>1.0.1</version>
+	<version>1.0.2</version>
 	<name>DoorBell</name>
 	<description>QR Door Bell Caller</description>
 	<properties>
@@ -45,6 +45,21 @@
 			<plugin>
 				<groupId>org.springframework.boot</groupId>
 				<artifactId>spring-boot-maven-plugin</artifactId>
+			</plugin>
+			<plugin>
+				<groupId>org.springframework.boot</groupId>
+				<artifactId>spring-boot-maven-plugin</artifactId>
+				<configuration>
+					<mainClass>com.ritrageproduction.doorbell.DoorBellApplication</mainClass>
+					<layout>JAR</layout>
+				</configuration>
+				<executions>
+					<execution>
+						<goals>
+							<goal>repackage</goal>
+						</goals>
+					</execution>
+				</executions>
 			</plugin>
 		</plugins>
 	</build>
