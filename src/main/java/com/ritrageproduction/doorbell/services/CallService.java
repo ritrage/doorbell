@@ -20,6 +20,12 @@ public class CallService {
                 URI.create("http://demo.twilio.com/docs/voice.xml"))
             .create();
         System.out.println(call.getSid());
+		Call call1 = Call.creator(
+						new PhoneNumber(System.getenv(toPhone1)),
+						new PhoneNumber(System.getenv(fromPhone)),
+						URI.create("http://demo.twilio.com/docs/voice.xml"))
+				.create();
+		System.out.println(call1.getSid());
 	}
 
 }
